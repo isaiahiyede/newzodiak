@@ -1,0 +1,158 @@
+{% load staticfiles %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+{% block head %}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Zodiak</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+        ============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'zodiakApp/img/favicon.ico">
+    <!-- Google Fonts
+        ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/bootstrap.min.css' %}">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/font-awesome.min.css' %}">
+    <!-- owl.carousel CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/owl.theme.css' %}">
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/owl.transitions.css' %}">
+    <!-- animate CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/animate.css' %}">
+    <!-- normalize CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/normalize.css' %}">
+    <!-- meanmenu icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/meanmenu.min.css' %}">
+    <!-- main CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/main.css' %}">
+    <!-- educate icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/educate-custon-icon.css' %}">
+    <!-- morrisjs CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/morrisjs/morris.css' %}">
+    <!-- mCustomScrollbar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/scrollbar/jquery.mCustomScrollbar.min.css' %}">
+    <!-- metisMenu CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/metisMenu/metisMenu.min.css' %}">
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/metisMenu/metisMenu-vertical.css' %}">
+    <!-- calendar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/calendar/fullcalendar.min.css' %}">
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/calendar/fullcalendar.print.min.css' %}">
+    <!-- style CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/style.css' %}">
+    <!-- responsive CSS
+        ============================================ -->
+    <link rel="stylesheet" href="{% static 'zodiakApp/css/responsive.css' %}">
+    <!-- modernizr JS
+        ============================================ -->
+    <script src="{% static 'zodiakApp/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+</head>
+{% endblock head %}
+
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    {% block contents %}
+
+    <div class="error-pagewrap">
+        <div class="error-page-int">
+            <div class="text-center m-b-md custom-login">
+                <h3>LOGIN</h3>
+            </div>
+            <div class="content-error">
+                <div class="hpanel">
+                    <div class="panel-body">
+                        <form method="post" id="loginForm" action="{% url 'zodiakApp:login' %}" enctype="multipart/form-data">
+                            {% csrf_token %}
+
+                            <div class="form-group">
+                                <label class="control-label" for="username">Username</label>
+                                <input type="text" placeholder="example@gmail.com" title="Please enter you username" required="" value="" name="username" id="username" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="password">Password</label>
+                                <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
+                            </div>
+                           
+                            <button class="btn btn-success btn-block loginbtn">Login</button>
+                            <a class="btn btn-default btn-block" href="{% url 'zodiakApp:register' %}">Register</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center login-footer">
+                <p>Copyright © 2018. All rights reserved.</p>
+            </div>
+        </div>   
+    </div>
+
+    {% endblock contents %}
+
+    {% block scripts %}
+    <!-- jquery
+        ============================================ -->
+    <script src="{% static 'zodiakApp/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="{% static 'zodiakApp/js/bootstrap.min.js' %}"></script>
+    <!-- wow JS
+        ============================================ -->
+    <script src="{% static 'zodiakApp/js/wow.min.js' %}"></script>
+    <!-- price-slider JS
+        ============================================ -->
+    <script src="{% static 'zodiakApp/js/jquery-price-slider.js' %}"></script>
+    <!-- meanmenu JS
+        ============================================ -->
+    <script src="{% static 'zodiakApp/js/jquery.meanmenu.js' %}"></script>
+    <!-- owl.carousel JS
+        ============================================ -->
+    <script src="{% static 'zodiakApp/js/owl.carousel.min.js' %}"></script>
+    <!-- sticky JS
+        ============================================ -->
+    <script src="{% static 'zodiakApp/js/jquery.sticky.js' %}"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+    <script src="{% static 'zodiakApp/js/jquery.scrollUp.min.js' %}"></script>
+    <!-- mCustomScrollbar JS
+        ============================================ -->
+    <script src="{% static 'zodiakApp/js/scrollbar/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'zodiakApp/js/scrollbar/mCustomScrollbar-active.js' %}"></script>
+    <!-- metisMenu JS
+        ============================================ -->
+    <script src="{% static 'zodiakApp/js/metisMenu/metisMenu.min.js' %}"></script>
+    <script src="{% static 'zodiakApp/js/metisMenu/metisMenu-active.js' %}"></script>
+    <!-- Charts JS
+        ============================================ -->
+    <script src="{% static 'zodiakApp/js/charts/Chart.js' %}"></script>
+    <script src="{% static 'zodiakApp/js/charts/bar-chart.js' %}"></script>
+    <!-- tab JS
+        ============================================ -->
+    <script src="{% static 'zodiakApp/js/tab.js' %}"></script>
+    <!-- plugins JS
+        ============================================ -->
+    <script src="{% static 'zodiakApp/js/plugins.js' %}"></script>
+    <!-- main JS
+        ============================================ -->
+    <script src="{% static 'zodiakApp/js/main.js' %}"></script></body>
+    {% endblock scripts %}
+
+</html>
